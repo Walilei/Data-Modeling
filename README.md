@@ -22,6 +22,7 @@ ACID vs BASE - ACID是RDBMS資料交易的特性；BASE是NoSQL資料存取的�
 # 2. NoSQL 資料庫有幾種，課程所提及的 MongoDB, HBase, Redis 又屬於哪一種？
 >共分為四種，Key-value利用鍵跟值的搭配來儲存資料，如Redis；Document文件資料庫如mongoDB；Column-family如HBase、Cassandra；Graph圖像式，利用圖學架構來儲存節點關係。
 ***
+
 # 3. ER Model 設計
 參考例題[3-4](https://0rz.tw/iDQj5)
 ```sh
@@ -34,10 +35,13 @@ ACID vs BASE - ACID是RDBMS資料交易的特性；BASE是NoSQL資料存取的�
 此外，老師跟學生間有一個關係型態「修課」(Takes)，老師和課程間有一個關係型態「授課」(Teaches)，學生和文章間有一個關係型態「貼」 (Posts)。請注意我們只需描述現時的資料，不需描述歷史的資料，所以一門課只有一位老師教。
 請依以上的需求，畫出ERD。必要的話，可自行假設其他相關狀況，但必須寫清楚。
 ```
-
-
+![3-4](https://raw.githubusercontent.com/Walilei/Data-Modeling/master/3-4.jpg)
 ***
+
 # 4. Relational Model 設計
 參考例題[4-6](https://0rz.tw/ldeQb)
-
+```sh
+請將 [習題3-4] 遠距教學互動系統的ERD 轉成關聯模式的資料庫綱目。此資料庫綱目中要列出每一關聯綱目的屬性名稱、主鍵及外部鍵。 (主鍵以底線表示，外部鍵可用箭頭表示所對應的主鍵。)
+```
+![4-6](https://raw.githubusercontent.com/Walilei/Data-Modeling/master/4-6.gif)
 ***
