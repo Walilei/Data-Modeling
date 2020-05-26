@@ -45,3 +45,63 @@ ACID vs BASE - ACID是RDBMS資料交易的特性；BASE是NoSQL資料存取的�
 ```
 ![4-6](https://raw.githubusercontent.com/Walilei/Data-Modeling/master/4-6.gif)
 ***
+
+# 5. MongoDB上機考
+* 基本操作
+
+```
+$ mongo
+>
+
+> show dbs
+> use <DATABASE>
+> show collections
+```
+
+* 新增與查詢
+
+```
+> db.<COLLECTION>.insert({})
+
+> show collections
+> db.<COLLECTION>.find(<json_document>)
+    
+    * <json_filter>:
+        {"[filter_field]" : "[filter_value]"
+        
+- 串連限定
+> db.<COLLECTION>.find().limit(n)  # 傳回前n筆資料
+
+- 排序
+> db.<COLLECTION>.find().sort({name:-1})  # -1遞減, 1遞增
+
+- 捨棄資料
+> db.<COLLECTION>.find().sort({name:-1}).skip(n)  # 捨棄前n筆資料
+
+```
+
+* 刪除與更新
+* 權限管理
+
+* 索引
+
+```
+- 單欄索引
+db.<COLLECTION>.ensureIndex(
+    {[field]:1},
+    {unique:[boolean]}
+)
+
+- 列出索引
+db.<COLLECTION>.getIndexes()
+
+- 刪除索引
+db.<COLLECTION>.dropIndex([index_name])
+
+```
+
+* 檢視查詢效能
+
+```
+> db.<COLLECTION>.find([filter_json]).explain()
+```
