@@ -67,13 +67,23 @@ $ mongo
 > db.<COLLECTION>.find(<json_document>)
     
     * <json_filter>:
-        {"[filter_field]" : "[filter_value]"
+        {"[filter_field]" : "[filter_value]"}
         
-- 串連限定
+- 串連限定與排序
 > db.<COLLECTION>.find().limit(n)  # 傳回前n筆資料
-
-- 排序
 > db.<COLLECTION>.find().sort({name:-1})  # -1遞減, 1遞增
+
+- 不等式查詢範圍
+> db.<COLLECTION>.find({'age':{$lte:25}})  # $lt小於, $gt大於, $lte小於等於
+
+- 邏輯運算條件
+> db.<COLLECTION>.find(
+    {
+      $or:[
+        {'age':{$lt:22}},
+        {'age':{$gt:28}}
+        ]
+    })
 
 - 捨棄資料
 > db.<COLLECTION>.find().sort({name:-1}).skip(n)  # 捨棄前n筆資料
