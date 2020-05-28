@@ -69,8 +69,8 @@ $ mongo
     * <json_filter>:
         {"[filter_field]" : "[filter_value]"}
 
-- 捨棄資料
-> db.<COLLECTION>.find().sort({name:-1}).skip(n)  # 捨棄前n筆資料
+- 忽略資料
+> db.<COLLECTION>.find().sort({name:-1}).skip(n)  # 忽略前n筆資料
 
 - 串連限定與排序
 > db.<COLLECTION>.find().limit(n)  # 傳回前n筆資料
