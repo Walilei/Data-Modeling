@@ -68,10 +68,14 @@ $ mongo
     
     * <json_filter>:
         {"[filter_field]" : "[filter_value]"}
-        
+
+- 捨棄資料
+> db.<COLLECTION>.find().sort({name:-1}).skip(n)  # 捨棄前n筆資料
+
 - 串連限定與排序
 > db.<COLLECTION>.find().limit(n)  # 傳回前n筆資料
 > db.<COLLECTION>.find().sort({name:-1})  # -1遞減, 1遞增
+> db.<COLLECTION>.find().sort({name:-1}).skip(1).limit(2)  # 順序必定為find, sort, skip, limit
 
 - 不等式查詢範圍
 > db.<COLLECTION>.find({'age':{$lte:25}})  # $lt小於, $gt大於, $lte小於等於
@@ -84,9 +88,6 @@ $ mongo
         {'age':{$gt:28}}
         ]
     })
-
-- 捨棄資料
-> db.<COLLECTION>.find().sort({name:-1}).skip(n)  # 捨棄前n筆資料
 
 ```
 
